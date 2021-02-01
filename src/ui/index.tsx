@@ -1,7 +1,5 @@
-import * as React from 'react'
-import * as ReactDOM from 'react-dom'
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import App from "./app";
 
-ReactDOM.render(
-    <div><h2>首页</h2></div>,
-    document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById("root"));
