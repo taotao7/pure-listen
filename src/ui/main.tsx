@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import TitleBar from "./components/titlebar";
+import TitleBar from "./components/titlebar/titlebar";
 
 const css_style: object = {
   margin: 0,

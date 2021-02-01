@@ -1,0 +1,10 @@
+.title_btn {
+  color: #ffb86c;
+}
+
+.container {
+  -webkit-app-region: drag;
+  background-color: "#282A36";
+  height: 10px;
+  margin-bottom: 15px;
+}

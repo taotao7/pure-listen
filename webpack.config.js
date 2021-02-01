@@ -1,6 +1,7 @@
 let path = require("path");
 
 module.exports = {
+  mode: "development",
   entry: "./src/ui/index.tsx",
   output: {
     filename: "bundle.js",
@@ -10,14 +11,24 @@ module.exports = {
   devtool: "source-map",
 
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"],
+    extensions: [".ts", ".tsx", ".js", ".json", ".css"],
   },
 
   module: {
     rules: [
-      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-
-      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" },
+      {
+        test: /\.tsx?$/,
+        loader: "awesome-typescript-loader",
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader",
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
     ],
   },
 
