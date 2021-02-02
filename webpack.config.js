@@ -7,13 +7,11 @@ module.exports = {
     filename: "bundle.js",
     path: __dirname + "/dist/",
   },
-
   devtool: "source-map",
-
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json", ".css"],
   },
-
+  target: "electron-renderer",
   module: {
     rules: [
       {
@@ -28,6 +26,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpg|ico)$/,
+        use: "url-loader",
       },
     ],
   },
