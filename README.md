@@ -25,3 +25,7 @@ npm run make
 - [ ] 酷我音乐
 - [ ] 添加桌面精灵 live2d
 - [ ] 换肤
+
+## 原型图
+
+![原型图] (origin.png)

@@ -12,7 +12,7 @@ const cssStyle = makeStyles({
   cardListCss: {
     display: "grid",
     gridTemplateColumns: "1fr",
-    gridTemplateRows: "repeat(4,1fr) minmax(10px,80px)",
+    gridTemplateRows: "repeat(4,1fr) minmax(10px,300px)",
     backgroundColor: "#44475A",
     gap: "1rem",
   },
