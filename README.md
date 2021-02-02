@@ -28,4 +28,4 @@ npm run make
 
 ## 原型图
 
-![原型图] (origin.png)
+![原型图] (https://github.com/taotao7/pure-listen/blob/main/origin.png)
