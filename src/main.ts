@@ -1,6 +1,7 @@
 import { app, BrowserWindow, ipcMain, Tray, Menu } from "electron";
 import path = require("path");
 
+let tray: Tray;
 // Create the browser window.
 let mainWindow: BrowserWindow;
 const createWindow = () => {
@@ -20,10 +21,10 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "../app/index.html"));
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
   //任务栏
-  let tray: Tray = new Tray(path.join(__dirname, "/assets/images/logo.png"));
+  tray = new Tray("src/assets/images/logo.ico");
 
   let trayMenuTemplate: Menu = Menu.buildFromTemplate([
     {

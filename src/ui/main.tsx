@@ -1,17 +1,31 @@
+import { Grid } from "@material-ui/core";
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import ContentPage from "./components/content/content";
+import SongList from "./components/songlist/songlist";
 import TitleBar from "./components/titlebar/titlebar";
+import { makeStyles } from "@material-ui/core/styles";
 
-const css_style: object = {
-  margin: 0,
-  padding: 0,
-};
+const cssStyle = makeStyles({
+  bodyCss: {
+    margin: 0,
+    padding: 0,
+  },
+  mainBodyCss: {
+    display: "grid",
+    gridTemplateColumns: "220px 70% ",
+    gridGap: "1rem",
+  },
+});
 
 const Main = () => {
+  const classes = cssStyle();
   return (
-    <div style={css_style}>
+    <div className={classes.bodyCss}>
       <TitleBar />
-      这是首页
+      <div className={classes.mainBodyCss}>
+        <SongList />
+        <ContentPage />
+      </div>
     </div>
   );
 };
