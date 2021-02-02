@@ -1,17 +1,31 @@
 import * as React from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import RemoveIcon from "@material-ui/icons/Remove";
 import FullscreenIcon from "@material-ui/icons/Fullscreen";
 import CloseIcon from "@material-ui/icons/Close";
 import { ipcRenderer } from "electron";
-import "./titlebar.css";
+
+const cssStyle = makeStyles({
+  titleBtn: {
+    color: "#ffb86c",
+  },
+  container: {
+    display: "grid",
+    gridTemplateColumns: "1fr 5fr 1fr",
+  },
+  moveElement: {
+    "-webkit-app-region": "drag",
+  },
+});
 
 const TitleBar = () => {
+  const classes = cssStyle();
   return (
-    <div className={"container"}>
-      <div className={"move_element"} />
+    <div className={"header" + " " + classes.container}>
+      <div className={classes.moveElement}></div>
       <div
-        className={"move_element"}
+        className={classes.moveElement}
         style={{
           color: "white",
           textAlign: "center",
@@ -30,7 +44,7 @@ const TitleBar = () => {
             ipcRenderer.send("window-min");
           }}
         >
-          <RemoveIcon className={"title_btn"} />
+          <RemoveIcon className={classes.titleBtn} />
         </IconButton>
         <IconButton
           size="small"
@@ -39,7 +53,7 @@ const TitleBar = () => {
             ipcRenderer.send("window-max");
           }}
         >
-          <FullscreenIcon className={"title_btn"} />
+          <FullscreenIcon className={classes.titleBtn} />
         </IconButton>
         <IconButton
           size="small"
@@ -47,7 +61,7 @@ const TitleBar = () => {
             ipcRenderer.send("window-close");
           }}
         >
-          <CloseIcon className={"title_btn"} />
+          <CloseIcon className={classes.titleBtn} />
         </IconButton>
       </div>
     </div>

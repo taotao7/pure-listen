@@ -2,6 +2,10 @@
 
 Just listen to music
 
+## 依赖
+
+npm install
+
 ## ✔ 运行
 
 npm run dev

@@ -12,7 +12,11 @@ const cssStyle = makeStyles({
   },
   mainBodyCss: {
     display: "grid",
-    gridTemplateColumns: "220px 70% ",
+    gridTemplateAreas: ` 
+    "header header header header" 
+    "leftPanel main main main"
+    "footer footer footer footer"
+    `,
     gridGap: "1rem",
   },
 });
