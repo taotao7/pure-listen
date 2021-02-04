@@ -22,7 +22,7 @@ const cssStyle = makeStyles({
 const TitleBar = () => {
   const classes = cssStyle();
   return (
-    <div className={"header" + " " + classes.container}>
+    <div className={classes.container} style={{ gridArea: "header" }}>
       <div className={classes.moveElement}></div>
       <div
         className={classes.moveElement}
